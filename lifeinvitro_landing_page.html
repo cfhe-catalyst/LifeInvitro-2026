@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>LifeInvitro Academy – 2026 Training Calendar | IVF & ART Certificate Programs</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --teal: #1a6b6b;
+    --teal-dark: #0f4545;
+    /* --cfhe-logo-col: #684094;
+    --gold: #2083b8;
+    --gold-light: #47aee6; */
+    --teal-light: #2a9090;
+    --gold: #c9a84c;
+    --gold-light: #e8c97a;
+    --cream: #faf8f3;
+    --off-white: #f2ede4;
+    --charcoal: #1c1e22;
+    --mid-grey: #5a5e66;
+    --light-grey: #e8e4dc;
+    --white: #ffffff;
+    --red-accent: #c0392b;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--charcoal);
+    overflow-x: hidden;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(255,255,255,0.96);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--light-grey);
+    padding: 14px 40px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .nav-logos { display: flex; align-items: center; gap: 20px; }
+  .nav-logos img { height: 36px; width: auto; object-fit: contain; }
+  .nav-logos .divider { width: 1px; height: 30px; background: var(--light-grey); }
+  .nav-cta {
+    background: var(--teal); color: var(--white);
+    padding: 10px 24px; border-radius: 4px;
+    font-size: 0.85rem; font-weight: 600; letter-spacing: 0.04em;
+    text-decoration: none; text-transform: uppercase;
+    transition: background 0.2s;
+  }
+  .nav-cta:hover { background: var(--teal-dark); }
+
+  /* ─── HERO ─── */
+  .hero {
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--teal-dark) 0%, var(--teal) 50%, #1f7a7a 100%);
+    position: relative;
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 120px 60px 80px;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image:
+      radial-gradient(circle at 80% 20%, rgba(201,168,76,0.15) 0%, transparent 50%),
+      radial-gradient(circle at 10% 80%, rgba(201,168,76,0.08) 0%, transparent 40%);
+  }
+  /* .hero-grid-lines {
+    position: absolute; inset: 0; opacity: 0.05;
+    background-image:
+      repeating-linear-gradient(0deg, var(--gold) 0px, var(--gold) 1px, transparent 1px, transparent 80px),
+      repeating-linear-gradient(90deg, var(--gold) 0px, var(--gold) 1px, transparent 1px, transparent 120px);
+  } */
+  .hero-grid-lines {
+    /* Layout */
+    position: absolute; 
+    inset: 0; 
+    
+    /* Visibility */
+    opacity: 0.15; /* Increased slightly from 0.05 so grid is visible over image */
+    
+    /* Layered Backgrounds */
+    background-image: 
+        /* Layer 1: Horizontal Grid Lines */
+        repeating-linear-gradient(0deg, var(--gold) 0px, var(--gold) 1px, transparent 1px, transparent 80px),
+        /* Layer 2: Vertical Grid Lines */
+        repeating-linear-gradient(90deg, var(--gold) 0px, var(--gold) 1px, transparent 1px, transparent 120px),
+        /* Layer 3: Your IVF-themed Image */
+        url('https://media.licdn.com/dms/image/v2/D5622AQE92LXAUueHXg/feedshare-shrink_800/B56ZqFto8AKAAg-/0/1763179927091?e=2147483647&v=beta&t=inIluDb4Ffptla7iN0g-dhCy9IHiCPMe4OGPOjtHvrI');
+
+    /* Positioning for the Image layer */
+    background-size: 120px 80px, 120px 80px, cover; /* Keep grid fixed, scale image to fit */
+    background-position: center;
+    background-repeat: repeat, repeat, no-repeat;
+}
+  .hero-tag {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: rgba(201,168,76,0.15); border: 1px solid rgba(201,168,76,0.4);
+    color: var(--gold-light); padding: 7px 16px; border-radius: 2px;
+    font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+    margin-bottom: 28px; width: fit-content;
+  }
+  .hero-tag span { width: 6px; height: 6px; background: var(--gold); border-radius: 50%; animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.6rem, 5.5vw, 4.8rem);
+    font-weight: 900;
+    color: var(--white);
+    line-height: 1.1;
+    max-width: 820px;
+    margin-bottom: 24px;
+    position: relative;
+  }
+  .hero h1 em {
+    font-style: italic; color: var(--gold-light);
+  }
+
+  .hero-sub {
+    font-size: clamp(1rem, 1.6vw, 1.2rem);
+    color: rgba(255,255,255,0.82);
+    max-width: 620px;
+    line-height: 1.7;
+    margin-bottom: 40px;
+    font-weight: 300;
+    position: relative;
+  }
+
+  .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; position: relative; }
+  .btn-primary {
+    background: var(--gold); color: var(--charcoal);
+    padding: 16px 34px; border-radius: 4px;
+    font-size: 0.95rem; font-weight: 700; letter-spacing: 0.04em;
+    text-decoration: none; text-transform: uppercase;
+    transition: all 0.2s; border: none; cursor: pointer; display: inline-block;
+  }
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(201,168,76,0.3); }
+
+  .btn-whatsapp {
+    background: #25D366; color: var(--white);
+    padding: 16px 34px; border-radius: 4px;
+    font-size: 0.95rem; font-weight: 700; letter-spacing: 0.04em;
+    text-decoration: none; text-transform: uppercase;
+    transition: all 0.2s; display: inline-flex; align-items: center; gap: 10px;
+  }
+  .btn-whatsapp:hover { background: #1da854; transform: translateY(-2px); }
+  .btn-whatsapp svg { width: 20px; height: 20px; fill: white; }
+
+  .btn-outline {
+    background: transparent; color: var(--white);
+    border: 1.5px solid rgba(255,255,255,0.5);
+    padding: 16px 34px; border-radius: 4px;
+    font-size: 0.95rem; font-weight: 600; letter-spacing: 0.04em;
+    text-decoration: none; text-transform: uppercase;
+    transition: all 0.2s; display: inline-block;
+  }
+  .btn-outline:hover { border-color: var(--white); background: rgba(255,255,255,0.08); }
+
+  .hero-stats {
+    position: absolute; bottom: 50px; right: 60px;
+    display: flex; gap: 48px;
+  }
+  .stat { text-align: center; }
+  .stat-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.4rem; font-weight: 900; color: var(--gold-light);
+    display: block; line-height: 1;
+  }
+  .stat-label { font-size: 0.72rem; color: rgba(255,255,255,0.65); letter-spacing: 0.1em; text-transform: uppercase; margin-top: 5px; }
+
+  /* ─── SECTIONS SHARED ─── */
+  section { padding: 90px 60px; }
+  .section-label {
+    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--teal);
+    margin-bottom: 14px; display: flex; align-items: center; gap: 10px;
+  }
+  .section-label::before { content: ''; width: 28px; height: 2px; background: var(--gold); display: inline-block; }
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 3.5vw, 2.8rem);
+    font-weight: 800; line-height: 1.2;
+    margin-bottom: 20px;
+  }
+  h2 span { color: var(--teal); }
+
+  /* ─── WHO SHOULD ATTEND ─── */
+  .audience { background: var(--white); }
+  .audience-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2px; margin-top: 48px;
+    border: 1px solid var(--light-grey);
+  }
+  .audience-card {
+    padding: 30px 24px;
+    background: var(--white);
+    border-right: 1px solid var(--light-grey);
+    transition: background 0.2s;
+  }
+  .audience-card:hover { background: var(--cream); }
+  .audience-icon {
+    width: 44px; height: 44px;
+    background: var(--teal);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 16px;
+    font-size: 1.3rem;
+  }
+  .audience-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 6px; }
+  .audience-card p { font-size: 0.85rem; color: var(--mid-grey); line-height: 1.6; }
+
+  /* ─── WHY CHOOSE ─── */
+  .why { background: var(--teal-dark); color: var(--white); }
+  .why .section-label { color: var(--gold-light); }
+  .why h2 { color: var(--white); }
+  .why h2 span { color: var(--gold-light); }
+  .why-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 28px; margin-top: 50px;
+  }
+  .why-card {
+    padding: 34px 28px;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 4px;
+    background: rgba(255,255,255,0.04);
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .why-card:hover { border-color: rgba(201,168,76,0.4); background: rgba(255,255,255,0.07); }
+  .why-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem; color: var(--gold); letter-spacing: 0.1em;
+    margin-bottom: 14px; display: block;
+  }
+  .why-card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 10px; color: var(--white); }
+  .why-card p { font-size: 0.88rem; color: rgba(255,255,255,0.65); line-height: 1.7; }
+
+  /* ─── CALENDAR ─── */
+  .calendar { background: var(--cream); }
+  .calendar-intro { max-width: 660px; margin-bottom: 50px; }
+  .calendar-intro p { color: var(--mid-grey); line-height: 1.7; margin-top: 14px; }
+
+  .month-block { margin-bottom: 40px; }
+  .month-header {
+    display: flex; align-items: center; gap: 16px;
+    margin-bottom: 16px;
+  }
+  .month-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem; font-weight: 800; color: var(--teal-dark);
+  }
+  .month-line { flex: 1; height: 1px; background: var(--light-grey); }
+
+  .course-table { width: 100%; border-collapse: collapse; }
+  .course-table thead tr {
+    background: var(--teal);
+  }
+  .course-table thead th {
+    padding: 12px 20px; text-align: left;
+    font-size: 0.73rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--white);
+  }
+  .course-table tbody tr {
+    border-bottom: 1px solid var(--light-grey);
+    transition: background 0.15s;
+  }
+  .course-table tbody tr:hover { background: rgba(26,107,107,0.04); }
+  .course-table tbody td {
+    padding: 14px 20px; font-size: 0.9rem; vertical-align: middle;
+  }
+  .date-range {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.82rem; color: var(--mid-grey); white-space: nowrap;
+  }
+  .course-name { font-weight: 600; color: var(--charcoal); }
+  .course-badge {
+    display: inline-block;
+    padding: 4px 10px; border-radius: 2px;
+    font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+  }
+  .badge-icsi { background: rgba(26,107,107,0.1); color: var(--teal); }
+  .badge-vit { background: rgba(52,100,180,0.1); color: #2a5faf; }
+  .badge-andro { background: rgba(139,69,19,0.1); color: #7a3e0a; }
+  .badge-biopsy { background: rgba(120,40,120,0.1); color: #7a1a7a; }
+  .badge-qc { background: rgba(20,120,80,0.1); color: #0e6645; }
+  .badge-special { background: rgba(192,57,43,0.1); color: var(--red-accent); }
+  .badge-para { background: rgba(180,100,20,0.1); color: #8a4e0e; }
+  .badge-found { background: rgba(26,107,107,0.08); color: var(--teal-dark); }
+  .badge-event { background: rgba(201,168,76,0.2); color: #7a5c00; }
+
+  /* ─── PATHWAYS ─── */
+  .pathways { background: var(--off-white); }
+  .pathway-cards {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px; margin-top: 50px;
+  }
+  .pathway-card {
+    background: var(--white);
+    border-top: 4px solid var(--teal);
+    padding: 32px 28px;
+    border-radius: 0 0 4px 4px;
+  }
+  .pathway-card.gold-top { border-top-color: var(--gold); }
+  .pathway-card.purple-top { border-top-color: #7a1a7a; }
+  .pathway-card.blue-top { border-top-color: #2a5faf; }
+  .pathway-card.red-top { border-top-color: var(--red-accent); }
+  .pathway-role {
+    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--mid-grey); margin-bottom: 8px;
+  }
+  .pathway-card h3 { font-size: 1.1rem; font-weight: 800; margin-bottom: 16px; color: var(--teal-dark); }
+  .pathway-card.gold-top h3 { color: #7a5c00; }
+  .pathway-card.purple-top h3 { color: #7a1a7a; }
+  .pathway-card.blue-top h3 { color: #2a5faf; }
+  .pathway-card.red-top h3 { color: var(--red-accent); }
+  .pathway-steps { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .pathway-steps li {
+    display: flex; align-items: flex-start; gap: 10px;
+    font-size: 0.87rem; color: var(--mid-grey); line-height: 1.5;
+  }
+  .step-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem; font-weight: 700;
+    background: var(--teal); color: var(--white);
+    width: 20px; height: 20px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; margin-top: 2px;
+  }
+
+  /* ─── CTA BANNER ─── */
+  .cta-banner {
+    background: linear-gradient(135deg, var(--gold) 0%, #b8892e 100%);
+    padding: 80px 60px;
+    text-align: center;
+    position: relative; overflow: hidden;
+  }
+  .cta-banner::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.15) 0%, transparent 40%),
+                      radial-gradient(circle at 80% 50%, rgba(0,0,0,0.1) 0%, transparent 40%);
+  }
+  .cta-banner h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+    color: var(--charcoal); margin-bottom: 14px; position: relative;
+  }
+  .cta-banner p { font-size: 1.05rem; color: rgba(28,30,34,0.75); margin-bottom: 38px; max-width: 560px; margin-left: auto; margin-right: auto; position: relative; }
+  .cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; position: relative; }
+
+  .btn-dark {
+    background: var(--charcoal); color: var(--white);
+    padding: 16px 34px; border-radius: 4px;
+    font-size: 0.95rem; font-weight: 700; letter-spacing: 0.04em;
+    text-decoration: none; text-transform: uppercase;
+    transition: all 0.2s; display: inline-block;
+  }
+  .btn-dark:hover { background: #2e3240; transform: translateY(-2px); }
+
+  /* ─── FAQ ─── */
+  .faq { background: var(--white); }
+  .faq-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 0; margin-top: 50px;
+    border: 1px solid var(--light-grey);
+  }
+  .faq-item {
+    padding: 28px 30px;
+    border-bottom: 1px solid var(--light-grey);
+    border-right: 1px solid var(--light-grey);
+  }
+  .faq-item:nth-child(even) { border-right: none; }
+  .faq-q {
+    font-size: 0.97rem; font-weight: 700; margin-bottom: 10px;
+    color: var(--teal-dark); display: flex; align-items: flex-start; gap: 10px;
+  }
+  .faq-q::before {
+    content: 'Q'; font-family: 'Playfair Display', serif;
+    font-size: 1.1rem; color: var(--gold); font-style: italic; flex-shrink: 0;
+  }
+  .faq-a { font-size: 0.88rem; color: var(--mid-grey); line-height: 1.7; padding-left: 22px; }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--charcoal); color: rgba(255,255,255,0.6);
+    padding: 50px 60px 30px;
+  }
+  .footer-top {
+    display: flex; align-items: flex-start; justify-content: space-between;
+    padding-bottom: 36px; border-bottom: 1px solid rgba(255,255,255,0.08);
+    flex-wrap: wrap; gap: 30px;
+  }
+  .footer-brand img { height: 32px; filter: brightness(0) invert(1); opacity: 0.8; margin-bottom: 12px; }
+  .footer-brand p { font-size: 0.82rem; max-width: 280px; line-height: 1.7; }
+  .footer-links { display: flex; gap: 50px; flex-wrap: wrap; }
+  .footer-links-col h4 { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--white); margin-bottom: 14px; }
+  .footer-links-col a { display: block; font-size: 0.83rem; color: rgba(255,255,255,0.55); text-decoration: none; margin-bottom: 8px; transition: color 0.2s; }
+  .footer-links-col a:hover { color: var(--gold-light); }
+  .footer-bottom { display: flex; justify-content: space-between; padding-top: 24px; font-size: 0.78rem; flex-wrap: wrap; gap: 10px; }
+
+  /* ─── HIGHLIGHT EVENTS ─── */
+  .event-highlight {
+    background: rgba(201,168,76,0.08);
+    border: 1px solid rgba(201,168,76,0.3);
+    border-left: 4px solid var(--gold);
+    border-radius: 0 4px 4px 0;
+    padding: 14px 20px;
+    margin-bottom: 20px;
+    display: flex; align-items: center; gap: 16px;
+  }
+  .event-highlight-icon { font-size: 1.5rem; }
+  .event-highlight-text { font-size: 0.88rem; color: var(--charcoal); }
+  .event-highlight-text strong { font-weight: 700; color: var(--teal-dark); }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 768px) {
+    nav { padding: 12px 20px; }
+    .hero { padding: 100px 24px 160px; }
+    .hero-stats { position: static; margin-top: 50px; justify-content: center; gap: 30px; }
+    section { padding: 60px 24px; }
+    .faq-grid { grid-template-columns: 1fr; }
+    .faq-item { border-right: none; }
+    footer { padding: 40px 24px 24px; }
+    .footer-top { flex-direction: column; }
+    .cta-banner { padding: 60px 24px; }
+  }
+
+  /* Scroll fade-in */
+  .fade-in {
+    opacity: 0; transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .fade-in.visible { opacity: 1; transform: none; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logos">
+    <img src="https://cfhe.org.in/wp-content/uploads/2025/03/logo-1.png" alt="LifeInvitro Academy" onerror="this.style.display='none'">
+    <div class="divider"></div>
+    <img src="https://cfhe.org.in/wp-content/uploads/2021/07/cfhe-logo.png" alt="CfHE IIT Hyderabad" onerror="this.style.display='none'">
+  </div>
+  <a href="#register" class="nav-cta">Register Now</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid-lines"></div>
+  <div class="hero-tag"><span></span> June – December 2026 · Certificate Programs</div>
+  <h1>Train at the<br><em>Frontier</em> of<br>Reproductive Medicine</h1>
+  <p class="hero-sub">India's most structured IVF & ART training calendar — delivered from the labs of IIT Hyderabad. Gain certified, hands-on expertise in embryology, andrology, and assisted reproduction.</p>
+  <div class="hero-actions">
+    <a href="#calendar" class="btn-primary">View Full Calendar</a>
+    <a href="https://wa.me/919032316632?text=Hello%2C%20I%20am%20interested%20in%20the%202026%20ART%20Training%20Programs%20at%20LifeInvitro%20Academy" class="btn-whatsapp" target="_blank">
+      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      WhatsApp Inquiry
+    </a>
+    <a href="https://cfhe.org.in/lifeinvitro-academy/" class="btn-outline" target="_blank">Visit Academy Website</a>
+  </div>
+  <div class="hero-stats">
+    <div class="stat"><span class="stat-number">10+</span><div class="stat-label">Certificate Courses</div></div>
+    <div class="stat"><span class="stat-number">4,500+</span><div class="stat-label">IVF Clinics in India</div></div>
+    <div class="stat"><span class="stat-number">7</span><div class="stat-label">Months of Training</div></div>
+  </div>
+</section>
+
+<!-- WHO SHOULD ATTEND -->
+<section class="audience">
+  <div class="section-label">Who Should Attend</div>
+  <h2>Built for Every <span>ART Professional</span></h2>
+  <p style="max-width:600px;color:var(--mid-grey);line-height:1.7;">Whether you are just entering the field or advancing your specialization, our structured programs meet you where you are.</p>
+  <div class="audience-grid fade-in">
+    <div class="audience-card">
+      <div class="audience-icon">🔬</div>
+      <h3>Clinical Embryologists</h3>
+      <p>Deepen practical skills in ICSI, embryo biopsy, vitrification, and lab quality systems.</p>
+    </div>
+    <div class="audience-card">
+      <div class="audience-icon">🧬</div>
+      <h3>IVF Lab Technicians</h3>
+      <p>Build a structured, certified foundation in core ART laboratory techniques.</p>
+    </div>
+    <div class="audience-card">
+      <div class="audience-icon">🩺</div>
+      <h3>Andrology Staff</h3>
+      <p>Gain expertise in basic and advanced andrology — from semen analysis to advanced sperm preparation.</p>
+    </div>
+    <div class="audience-card">
+      <div class="audience-icon">👨‍⚕️</div>
+      <h3>ART Clinicians</h3>
+      <p>Attend the clinician-focused course on starting and running a fully operational IVF unit.</p>
+    </div>
+    <div class="audience-card">
+      <div class="audience-icon">🏥</div>
+      <h3>Fertility Center Owners</h3>
+      <p>Understand lab operations, QC frameworks, and team competency development for your clinic.</p>
+    </div>
+    <div class="audience-card">
+      <div class="audience-icon">👩‍🔬</div>
+      <h3>New Entrants to ART</h3>
+      <p>The START and Fundamentals courses offer an ideal, structured entry point into reproductive medicine.</p>
+    </div>
+    <div class="audience-card">
+      <div class="audience-icon">🧑‍⚕️</div>
+      <h3>Paramedical & Nursing Staff</h3>
+      <p>Our dedicated paramedical training course is designed for IVF support team roles.</p>
+    </div>
+    <div class="audience-card">
+      <div class="audience-icon">🎓</div>
+      <h3>MSc / BSc Life Science Graduates</h3>
+      <p>Launch your career in embryology with recognized certification from IIT Hyderabad's CfHE.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE -->
+<section class="why">
+  <div class="section-label">Why LifeInvitro Academy</div>
+  <h2>Training That Sets <span>Industry Standards</span></h2>
+  <div class="why-grid fade-in">
+    <div class="why-card">
+      <span class="why-num">01 — Institutional Backing</span>
+      <h3>Powered by IIT Hyderabad & CfHE</h3>
+      <p>Our programs are developed in partnership with the Center for Healthcare Entrepreneurship at IIT Hyderabad — India's premier innovation ecosystem — bringing academic rigour to hands-on clinical training.</p>
+    </div>
+    <div class="why-card">
+      <span class="why-num">02 — Hands-On First</span>
+      <h3>Real Lab, Real Equipment</h3>
+      <p>Train on micromanipulation systems, incubators, vitrification platforms, and QA/QC instruments identical to those in active IVF labs — not simulations, not theory alone.</p>
+    </div>
+    <div class="why-card">
+      <span class="why-num">03 — Expert Faculty</span>
+      <h3>60+ Years of Combined ART Expertise</h3>
+      <p>Our trainers and mentors bring decades of direct clinical embryology and andrology experience, ensuring every session delivers relevant, practice-ready knowledge.</p>
+    </div>
+    <div class="why-card">
+      <span class="why-num">04 — Career-Aligned Structure</span>
+      <h3>Courses for Every Career Stage</h3>
+      <p>From starter programs for new entrants (START, Fundamentals) to advanced specializations (Embryo Biopsy, Advanced Andrology), every course is positioned within a clear career pathway.</p>
+    </div>
+    <div class="why-card">
+      <span class="why-num">05 — Recognized Certification</span>
+      <h3>Certificates That Open Doors</h3>
+      <p>Participants receive certificates recognized within the ART industry, supporting job placement, promotions, and credibility in a field where formal training credentials are increasingly demanded.</p>
+    </div>
+    <div class="why-card">
+      <span class="why-num">06 — Compact & Intensive Format</span>
+      <h3>2–10 Days. Maximum Learning.</h3>
+      <p>Programs are designed as focused, immersive modules so working professionals can upskill without extended leave — concentrated learning with lasting impact.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CALENDAR -->
+<section class="calendar" id="calendar">
+  <div class="section-label">Course Calendar</div>
+  <h2>2026 Training <span>Schedule</span></h2>
+  <div class="calendar-intro">
+    <p>All programs are conducted at the LifeInvitro Academy facility at IIT Hyderabad. Dates are subject to minimum enrolment. Early registration is strongly advised as seats are limited.</p>
+  </div>
+
+  <div class="event-highlight">
+    <div class="event-highlight-icon">⭐</div>
+    <div class="event-highlight-text"><strong>Microembart 2026</strong> — Special event: 6th–7th June 2026. A flagship gathering for ART professionals. Mark your calendar!</div>
+  </div>
+  <div class="event-highlight">
+    <div class="event-highlight-icon">⭐</div>
+    <div class="event-highlight-text"><strong>ACE 2026</strong> — Special event: 7th–9th August 2026. Advanced Clinical Embryology intensive.</div>
+  </div>
+
+  <!-- JUNE -->
+  <div class="month-block fade-in">
+    <div class="month-header">
+      <span class="month-name">June 2026</span>
+      <div class="month-line"></div>
+    </div>
+    <table class="course-table">
+      <thead><tr><th>Dates</th><th>Course</th><th>Category</th></tr></thead>
+      <tbody>
+        <tr><td class="date-range">Jun 6–7</td><td class="course-name">⭐ MICROEMBART – Flagship ART Conference/Event</td><td><span class="course-badge badge-event">Special Event</span></td></tr>
+        <tr><td class="date-range">Jun 8–10</td><td class="course-name">Certificate Course in Basic Andrology</td><td><span class="course-badge badge-andro">Andrology</span></td></tr>
+        <tr><td class="date-range">Jun 12–13</td><td class="course-name">Certificate Course in Vitrification & Warming of Oocytes and Embryos</td><td><span class="course-badge badge-vit">Vitrification</span></td></tr>
+        <tr><td class="date-range">Jun 14–18</td><td class="course-name">Certificate Course in Intracytoplasmic Sperm Injection (ICSI)</td><td><span class="course-badge badge-icsi">ICSI</span></td></tr>
+        <tr><td class="date-range">Jun 20–21</td><td class="course-name">Certificate Course in Quality Control in the IVF Laboratory</td><td><span class="course-badge badge-qc">QC / Lab</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- JULY -->
+  <div class="month-block fade-in">
+    <div class="month-header">
+      <span class="month-name">July 2026</span>
+      <div class="month-line"></div>
+    </div>
+    <table class="course-table">
+      <thead><tr><th>Dates</th><th>Course</th><th>Category</th></tr></thead>
+      <tbody>
+        <tr><td class="date-range">Jul 5–9</td><td class="course-name">Certificate Course in Intracytoplasmic Sperm Injection (ICSI)</td><td><span class="course-badge badge-icsi">ICSI</span></td></tr>
+        <tr><td class="date-range">Jul 11–14</td><td class="course-name">Certificate Course in Advanced Andrology</td><td><span class="course-badge badge-andro">Andrology</span></td></tr>
+        <tr><td class="date-range">Jul 18–19</td><td class="course-name">Certificate Course in Vitrification & Warming of Oocytes and Embryos</td><td><span class="course-badge badge-vit">Vitrification</span></td></tr>
+        <tr><td class="date-range">Jul 26–29</td><td class="course-name">Certificate Course in Embryo Biopsy</td><td><span class="course-badge badge-biopsy">Biopsy / PGT</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- AUGUST -->
+  <div class="month-block fade-in">
+    <div class="month-header">
+      <span class="month-name">August 2026</span>
+      <div class="month-line"></div>
+    </div>
+    <table class="course-table">
+      <thead><tr><th>Dates</th><th>Course</th><th>Category</th></tr></thead>
+      <tbody>
+        <tr><td class="date-range">Aug 1–5</td><td class="course-name">Certificate Course in Intracytoplasmic Sperm Injection (ICSI)</td><td><span class="course-badge badge-icsi">ICSI</span></td></tr>
+        <tr><td class="date-range">Aug 7–9</td><td class="course-name">⭐ ACE 2026 – Advanced Clinical Embryology Event</td><td><span class="course-badge badge-event">Special Event</span></td></tr>
+        <tr><td class="date-range">Aug 16–17</td><td class="course-name">Certificate Course in Vitrification & Warming of Oocytes and Embryos</td><td><span class="course-badge badge-vit">Vitrification</span></td></tr>
+        <tr><td class="date-range">Aug 22–24</td><td class="course-name">Certificate Course in Basic Andrology</td><td><span class="course-badge badge-andro">Andrology</span></td></tr>
+        <tr><td class="date-range">Aug 29–30</td><td class="course-name">Certificate Course in START – Starter Training in ART for New IVF Staff</td><td><span class="course-badge badge-special">New Entrants</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- SEPTEMBER -->
+  <div class="month-block fade-in">
+    <div class="month-header">
+      <span class="month-name">September 2026</span>
+      <div class="month-line"></div>
+    </div>
+    <table class="course-table">
+      <thead><tr><th>Dates</th><th>Course</th><th>Category</th></tr></thead>
+      <tbody>
+        <tr><td class="date-range">Sep 1–10</td><td class="course-name">Certificate Course in Fundamentals of Clinical ART Laboratory</td><td><span class="course-badge badge-found">Foundation</span></td></tr>
+        <tr><td class="date-range">Sep 13–17</td><td class="course-name">Certificate Course in Intracytoplasmic Sperm Injection (ICSI)</td><td><span class="course-badge badge-icsi">ICSI</span></td></tr>
+        <tr><td class="date-range">Sep 19–20</td><td class="course-name">Certificate Course in Vitrification & Warming of Oocytes and Embryos</td><td><span class="course-badge badge-vit">Vitrification</span></td></tr>
+        <tr><td class="date-range">Sep 27–30</td><td class="course-name">Certificate Course in Embryo Biopsy</td><td><span class="course-badge badge-biopsy">Biopsy / PGT</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- OCTOBER -->
+  <div class="month-block fade-in">
+    <div class="month-header">
+      <span class="month-name">October 2026</span>
+      <div class="month-line"></div>
+    </div>
+    <table class="course-table">
+      <thead><tr><th>Dates</th><th>Course</th><th>Category</th></tr></thead>
+      <tbody>
+        <tr><td class="date-range">Oct 4–5</td><td class="course-name">Certificate Course in Vitrification & Warming of Oocytes and Embryos</td><td><span class="course-badge badge-vit">Vitrification</span></td></tr>
+        <tr><td class="date-range">Oct 6–9</td><td class="course-name">Certificate Course in Advanced Andrology</td><td><span class="course-badge badge-andro">Andrology</span></td></tr>
+        <tr><td class="date-range">Oct 13–19</td><td class="course-name">Paramedical Training Course for IVF Unit</td><td><span class="course-badge badge-para">Paramedical</span></td></tr>
+        <tr><td class="date-range">Oct 26–30</td><td class="course-name">Certificate Course in Intracytoplasmic Sperm Injection (ICSI)</td><td><span class="course-badge badge-icsi">ICSI</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- NOVEMBER -->
+  <div class="month-block fade-in">
+    <div class="month-header">
+      <span class="month-name">November 2026</span>
+      <div class="month-line"></div>
+    </div>
+    <table class="course-table">
+      <thead><tr><th>Dates</th><th>Course</th><th>Category</th></tr></thead>
+      <tbody>
+        <tr><td class="date-range">Nov 2–3</td><td class="course-name">Starting and Running an IVF Unit — Course for Clinicians</td><td><span class="course-badge badge-special">Clinicians</span></td></tr>
+        <tr><td class="date-range">Nov 6–7</td><td class="course-name">Certificate Course in Vitrification & Warming of Oocytes and Embryos</td><td><span class="course-badge badge-vit">Vitrification</span></td></tr>
+        <tr><td class="date-range">Nov 15–19</td><td class="course-name">Certificate Course in Intracytoplasmic Sperm Injection (ICSI)</td><td><span class="course-badge badge-icsi">ICSI</span></td></tr>
+        <tr><td class="date-range">Nov 22–25</td><td class="course-name">Certificate Course in Embryo Biopsy</td><td><span class="course-badge badge-biopsy">Biopsy / PGT</span></td></tr>
+        <tr><td class="date-range">Nov 28–30</td><td class="course-name">Certificate Course in Basic Andrology</td><td><span class="course-badge badge-andro">Andrology</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- DECEMBER -->
+  <div class="month-block fade-in">
+    <div class="month-header">
+      <span class="month-name">December 2026</span>
+      <div class="month-line"></div>
+    </div>
+    <table class="course-table">
+      <thead><tr><th>Dates</th><th>Course</th><th>Category</th></tr></thead>
+      <tbody>
+        <tr><td class="date-range">Dec 6–9</td><td class="course-name">Certificate Course in Intracytoplasmic Sperm Injection (ICSI)</td><td><span class="course-badge badge-icsi">ICSI</span></td></tr>
+        <tr><td class="date-range">Dec 13–14</td><td class="course-name">Certificate Course in Vitrification & Warming of Oocytes and Embryos</td><td><span class="course-badge badge-vit">Vitrification</span></td></tr>
+        <tr><td class="date-range">Dec 19–22</td><td class="course-name">Advanced Andrology or Embryo Biopsy (Elective)</td><td><span class="course-badge badge-andro">Advanced</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- PATHWAYS -->
+<section class="pathways" id="pathways">
+  <div class="section-label">Course Pathways</div>
+  <h2>Find Your <span>Training Route</span></h2>
+  <p style="max-width:620px;color:var(--mid-grey);line-height:1.7;">Not sure where to start? Here are recommended course progressions based on your current role and experience level.</p>
+
+  <div class="pathway-cards fade-in">
+    <div class="pathway-card">
+      <div class="pathway-role">Pathway for</div>
+      <h3>New Entrants to ART / Life Science Graduates</h3>
+      <ul class="pathway-steps">
+        <li><div class="step-num">1</div>START – Starter Training in ART for New Staff (Aug 29–30)</li>
+        <li><div class="step-num">2</div>Fundamentals of Clinical ART Laboratory (Sep 1–10)</li>
+        <li><div class="step-num">3</div>Basic Andrology (Jun, Aug, or Nov)</li>
+        <li><div class="step-num">4</div>Vitrification & Warming of Oocytes & Embryos</li>
+        <li><div class="step-num">5</div>ICSI Certificate Course</li>
+      </ul>
+    </div>
+
+    <div class="pathway-card gold-top">
+      <div class="pathway-role">Pathway for</div>
+      <h3>Practising Embryologists Seeking Advanced Skills</h3>
+      <ul class="pathway-steps">
+        <li><div class="step-num">1</div>ICSI Certificate Course (multiple dates available)</li>
+        <li><div class="step-num">2</div>Quality Control in the IVF Laboratory (Jun 20–21)</li>
+        <li><div class="step-num">3</div>Vitrification & Warming of Oocytes & Embryos</li>
+        <li><div class="step-num">4</div>Embryo Biopsy (Jul, Sep, or Nov)</li>
+        <li><div class="step-num">5</div>ACE 2026 – Special Event (Aug 7–9)</li>
+      </ul>
+    </div>
+
+    <div class="pathway-card purple-top">
+      <div class="pathway-role">Pathway for</div>
+      <h3>Andrology & Semen Analysis Staff</h3>
+      <ul class="pathway-steps">
+        <li><div class="step-num">1</div>Basic Andrology (Jun 8–10, Aug 22–24, or Nov 28–30)</li>
+        <li><div class="step-num">2</div>Advanced Andrology (Jul 11–14, Oct 6–9, or Dec 19–22)</li>
+        <li><div class="step-num">3</div>Quality Control in the IVF Laboratory (Jun 20–21)</li>
+        <li><div class="step-num">4</div>ICSI Certificate Course (for lab integration)</li>
+      </ul>
+    </div>
+
+    <div class="pathway-card blue-top">
+      <div class="pathway-role">Pathway for</div>
+      <h3>Paramedical & IVF Support Staff</h3>
+      <ul class="pathway-steps">
+        <li><div class="step-num">1</div>START – Starter Training in ART (Aug 29–30)</li>
+        <li><div class="step-num">2</div>Paramedical Training Course for IVF Unit (Oct 13–19)</li>
+        <li><div class="step-num">3</div>Fundamentals of Clinical ART Laboratory (Sep)</li>
+      </ul>
+    </div>
+
+    <div class="pathway-card red-top">
+      <div class="pathway-role">Pathway for</div>
+      <h3>IVF Clinicians & Fertility Center Founders</h3>
+      <ul class="pathway-steps">
+        <li><div class="step-num">1</div>Starting & Running an IVF Unit — Clinicians Course (Nov 2–3)</li>
+        <li><div class="step-num">2</div>Quality Control in the IVF Laboratory (Jun 20–21)</li>
+        <li><div class="step-num">3</div>MICROEMBART 2026 – Conference (Jun 6–7)</li>
+        <li><div class="step-num">4</div>ACE 2026 – Advanced Embryology Event (Aug 7–9)</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- REGISTRATION CTA -->
+<section class="cta-banner" id="register">
+  <h2>Secure Your Place in the 2026 Cohort</h2>
+  <p>Seats for each course are limited. Early registration ensures your preferred dates and gives you time to plan your travel and accommodation at IIT Hyderabad.</p>
+  <div class="cta-buttons">
+    <a href="https://cfhe.org.in/art-skill-development-centre/courses/" class="btn-dark" target="_blank">Browse All Courses & Register</a>
+    <a href="https://wa.me/919032316632?text=Hello%2C%20I%20want%20to%20register%20for%20a%202026%20ART%20Training%20Program" class="btn-whatsapp" target="_blank" style="background:#25D366;">
+      <svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:white;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      WhatsApp to Enquire
+    </a>
+    <a href="https://cfhe.org.in/art-skill-development-centre/contact-us/" class="btn-dark" target="_blank" style="background:#1c1e22cc;">Contact Us</a>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="section-label">Frequently Asked Questions</div>
+  <h2>Common <span>Questions</span> Answered</h2>
+  <div class="faq-grid fade-in">
+    <div class="faq-item">
+      <div class="faq-q">Who are the courses suitable for?</div>
+      <div class="faq-a">Our courses are designed for practising embryologists, IVF lab technicians, andrology staff, clinicians, paramedical personnel, and new entrants with a background in life sciences. Each course page specifies recommended prerequisites.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Where are the courses held?</div>
+      <div class="faq-a">All programs are conducted at the LifeInvitro Academy facility located at IIT Hyderabad, Sangareddy, Telangana. The campus provides a fully equipped ART training laboratory with industry-standard instruments.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What accommodation is available?</div>
+      <div class="faq-a">On-campus accommodation is available at the IIT Hyderabad guest house, subject to availability. Several hotels and rental options are also available near the campus for participants travelling from other cities.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Are certificates recognized in the industry?</div>
+      <div class="faq-a">Yes. Participants receive a Certificate of Completion issued under the LifeInvitro Academy and CfHE, IIT Hyderabad. These certificates are recognized by fertility clinics and IVF units across India as evidence of structured, hands-on clinical training.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What is the batch size for each course?</div>
+      <div class="faq-a">Batches are intentionally kept small to ensure individualized attention and adequate time on equipment. Exact capacities vary per course. We recommend registering early, as seats fill quickly — particularly for ICSI and Embryo Biopsy.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Can I attend multiple courses in one visit?</div>
+      <div class="faq-a">Yes, where dates allow. For example, the START course (Aug 29–30) is immediately followed by the Fundamentals of Clinical ART Laboratory (Sep 1–10), making it an ideal two-week foundational immersion for new entrants.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How do I register or enquire about fees?</div>
+      <div class="faq-a">You can register through the LifeInvitro Academy website at cfhe.org.in/lifeinvitro-academy, email the academy directly, or send a WhatsApp message using the inquiry button on this page. Our team will respond within one working day.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What are MICROEMBART and ACE 2026?</div>
+      <div class="faq-a">MICROEMBART (Jun 6–7) and ACE (Aug 7–9) are special annual ART events hosted by LifeInvitro Academy bringing together practitioners, trainers, and industry partners for demonstrations, lectures, and networking. Attendance is open to professionals in the ART field.</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <img src="https://cfhe.org.in/wp-content/uploads/2025/03/logo-1.png" alt="LifeInvitro Academy">
+      <p>A training initiative of the Center for Healthcare Entrepreneurship (CfHE), IIT Hyderabad. Building the next generation of ART professionals.</p>
+    </div>
+    <div class="footer-links">
+      <div class="footer-links-col">
+        <h4>Programs</h4>
+        <a href="https://cfhe.org.in/art-skill-development-centre/courses/" target="_blank">All Courses</a>
+        <a href="https://cfhe.org.in/lifeinvitro-academy/calendar/" target="_blank">Course Calendar</a>
+        <a href="https://cfhe.org.in/lifeinvitro-academy/#about" target="_blank">About Academy</a>
+      </div>
+      <div class="footer-links-col">
+        <h4>Institution</h4>
+        <a href="https://cfhe.org.in/" target="_blank">CfHE, IIT Hyderabad</a>
+        <a href="https://cfhe.org.in/lifeinvitro-academy/founders/" target="_blank">Founders</a>
+        <a href="https://cfhe.org.in/lifeinvitro-academy/mentors/" target="_blank">Mentors & Faculty</a>
+      </div>
+      <div class="footer-links-col">
+        <h4>Contact</h4>
+        <a href="https://cfhe.org.in/art-skill-development-centre/contact-us/" target="_blank">Contact Form</a>
+        <a href="https://wa.me/919999999999" target="_blank">WhatsApp Enquiry</a>
+        <a href="https://cfhe.org.in/" target="_blank">cfhe.org.in</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 LifeInvitro Academy · CfHE, IIT Hyderabad. All rights reserved.</span>
+    <span>Training calendar subject to change. Verify dates at cfhe.org.in</span>
+  </div>
+</footer>
+
+<script>
+  // Scroll fade-in
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+
+  // Smooth nav on scroll
+  window.addEventListener('scroll', () => {
+    const nav = document.querySelector('nav');
+    nav.style.boxShadow = window.scrollY > 40 ? '0 2px 20px rgba(0,0,0,0.08)' : 'none';
+  });
+</script>
+</body>
+</html>
