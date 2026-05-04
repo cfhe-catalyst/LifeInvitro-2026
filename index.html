@@ -364,6 +364,145 @@
     transition: all 0.2s; display: inline-block;
   }
   .btn-dark:hover { background: #2e3240; transform: translateY(-2px); }
+  /* ─── COLLABORATION SECTION ─── */
+  .collaboration {
+    background: var(--cream);
+  }
+  .collaboration-intro {
+    max-width: 660px;
+    margin-bottom: 50px;
+  }
+  .collaboration-intro p {
+    color: var(--mid-grey);
+    line-height: 1.7;
+    margin-top: 14px;
+  }
+
+  /* Logos Grid Styling */
+  .partners-logos-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-bottom: 60px;
+    padding: 30px;
+    background: var(--white);
+    border-radius: 8px;
+    border: 1px solid var(--light-grey);
+  }
+  .partner-logo-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+    width: auto;
+    transition: transform 0.2s ease;
+  }
+  .partner-logo-item:hover {
+    transform: scale(1.05);
+  }
+  .partner-logo-item img {
+    max-height: 100%;
+    max-width: 180px;
+    object-fit: contain;
+  }
+
+  /* Partner Detail Cards */
+  .partners-details-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 28px;
+  }
+  .partner-card {
+    background: var(--white);
+    padding: 34px 30px;
+    border-radius: 4px;
+    border: 1px solid var(--light-grey);
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .partner-card:hover {
+    border-color: var(--gold);
+    box-shadow: 0 8px 30px rgba(201,168,76,0.1);
+  }
+
+  .partner-card-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 24px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--light-grey);
+  }
+  .card-logo {
+    height: 60px;
+    width: auto;
+  }
+  .card-logo img {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+  }
+  .partner-card-header h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    font-weight: 800;
+    line-height: 1.2;
+    color: var(--teal-dark);
+  }
+  .partner-card h3 span {
+    font-weight: 400;
+    font-size: 0.9em;
+    display: block;
+    color: var(--mid-grey);
+  }
+
+  .partner-card p {
+    font-size: 0.88rem;
+    color: var(--mid-grey);
+    line-height: 1.7;
+    margin-bottom: 18px;
+  }
+  .partner-card p strong {
+    color: var(--charcoal);
+  }
+
+  /* Special style for the bullet lists within cards */
+  .partner-stats-list {
+    list-style: none;
+    margin-top: 10px;
+  }
+  .partner-stats-list li {
+    font-size: 0.85rem;
+    color: var(--mid-grey);
+    line-height: 1.6;
+    margin-bottom: 8px;
+    padding-left: 24px;
+    position: relative;
+  }
+  .partner-stats-list li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+    font-weight: 700;
+  }
+
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .partners-logos-grid {
+      gap: 20px;
+      padding: 20px;
+    }
+    .partner-logo-item img {
+      max-width: 140px;
+    }
+    .partner-card-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 15px;
+    }
+  }
 
   /* ─── FAQ ─── */
   .faq { background: var(--white); }
@@ -817,6 +956,35 @@
       <div class="faq-a">MICROEMBART (Jun 6–7) and ACE (Aug 7–9) are special annual ART events hosted by LifeInvitro Academy bringing together practitioners, trainers, and industry partners for demonstrations, lectures, and networking. Attendance is open to professionals in the ART field.</div>
     </div>
   </div>
+</section>
+
+<!-- OUR PARTNERS & COLLABORATORS -->
+<section class="collaboration" id="collaboration">
+  <div class="section-label">Collaboration</div>
+  <h2>Our Partners & <span>Collaborators</span></h2>
+  <div class="collaboration-intro">
+    <p>We collaborate with industry leaders to provide cutting-edge ART training, ensuring that our curriculum is not only academically rigorous but also aligned with the latest practical needs of the field.</p>
+  </div>
+
+  <!-- Logos Grid -->
+  <div class="partners-logos-grid fade-in">
+    <div class="partner-logo-item">
+      <img src="https://cfhe.org.in/wp-content/uploads/2021/07/cfhe-logo.png" alt="CfHE logo">
+    </div>
+    <div class="partner-logo-item">
+      <img src="https://iith.ac.in/assets/images/horzlogolong.png" alt="IIT Hyderabad logo">
+    </div>
+    <div class="partner-logo-item">
+      <img src="https://cfhe.org.in/wp-content/uploads/2025/02/ZQG-logo-1024x1024.png" alt="ZY-QUEST GLOBAL logo">
+    </div>
+    <div class="partner-logo-item">
+      <img src="https://cfhe.org.in/wp-content/uploads/2025/02/STECH-IVF-LOGO_JPEG-1024x1024.jpg" alt="S TECH IVF Solutions logo">
+    </div>
+  </div>
+
+  
+
+  
 </section>
 
 <!-- FOOTER -->
